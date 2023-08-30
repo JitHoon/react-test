@@ -15,18 +15,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.game {
-  display: flex;
-  flex-direction: column;
-}
-
-.game-board {
-  margin: 10px;
-  border: 1px solid #fff;
-}
-
-.game-info {
-  margin: 10px;
-  border: 1px solid #fff;
-}
