@@ -5,11 +5,14 @@ import "./Board.css";
 export const Board = () => {
   // 공유 state
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [xIsNext, setXIsNext] = useState(true);
+  const nextPlayer = xIsNext ? "X" : "O";
 
   // Squar 자녀에게 물려 줄 click handle 함수
   const setX = (i) => {
     const newSquares = squares.slice();
-    newSquares[i] = "X";
+    newSquares[i] = xIsNext ? "X" : "O";
+    setXIsNext((current) => !current);
     setSquares(newSquares);
   };
 
@@ -25,7 +28,7 @@ export const Board = () => {
 
   return (
     <div>
-      <div className="status">Next Player: X, O</div>
+      <div className="status">Next Player: {nextPlayer}</div>
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
